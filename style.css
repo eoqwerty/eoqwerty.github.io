@@ -1,23 +1,93 @@
 
+
 body {
-  background-color: rgb(247, 249, 250)
+  background-color: rgba(255, 255, 255, 0.39);
 }
+
+
+p {
+  overflow: auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+} 
+h1,
 h2 {
   color:rgb(35, 59, 110);
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:black;
+}
+
+a:hover {
+  background-color: rgba(0, 139, 139, 0.37);
+  color: darkblue;
+  border-radius: 6%;
+  
+}
+
 .page-links {
+  text-align: center;
   color:rgb(35, 59, 110);
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique;
+  
 }
 
-#intro {
-  overflow: auto;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.intro {
+  padding: 2%;
+  outline: thick, 50px, black;
+  background-color: rgba(236, 237, 238, 0.589);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
+
+.projects-desc {
+  padding-left: 5%;
+}
+.project-photos {
+  width:75;
+  height:75;
+  float: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color:cornflowerblue;
+  border-radius: 10%;
+
+}
+
+.project-buttons {
+  padding: 2%;
+  background-color: rgba(236, 237, 238, 0.589);
+  margin:auto;
+
+}
+#sections {
+  width: 75%;
+  margin: auto;
+}
 #pfp {
-  float: right;
+  width: 15%;
+  border-radius: 50%;
 
 }
+#name {
+  
+  width: 50%;
+  text-align: center;
+  color:rgb(35, 59, 110);
+  font-family: Georgia, 'Times New Roman', Times;
+  font-size: 300%;
+  font-weight: bolder; 
+}
+
+#abt-me {
+  padding-bottom: 5%;
+}
+
