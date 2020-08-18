@@ -1,0 +1,23 @@
+
+body {
+  background-color: rgb(247, 249, 250)
+}
+h2 {
+  color:rgb(35, 59, 110);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.page-links {
+  color:rgb(35, 59, 110);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#intro {
+  overflow: auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#pfp {
+  float: right;
+
+}
