@@ -1,0 +1,57 @@
+TEAM
+
+Casey Levitt    clevitt1
+Emilia Ochoa    eochoa6
+Nader Najjar    nnajjar2
+
+
+DESIGN
+
+This chess game is designed with a few key classes. At the base level,
+there is the abstract class Piece. Every type of chess piece is derived
+from this class, so they all have the same basic functionality. Pieces
+know their ascii representation, how they can move, and how they can capture.
+
+One level up from piece is the Board class. Board has one field, and
+it is a map that stores locations on the board as keys and Pieces occupying
+those locations as values. As the game is played and pieces move, we delete any
+unoccupied positiions from the map and add newly occupied positions to the map.
+So, at any give time, the map only has as many entries as there are pieces
+on the board.
+
+The last class in this chess game is the Chess class. This class has a Board
+and a boolean that defines whose turn it is (black or white).
+
+The Chess class contains functions that directly facilitate gameplay,
+such as make_move. There are many conditions that must be checked before
+a move is made.
+  One of the conditions that must be checked is that there
+is nothing in the way of a piece that intends to move in a straight line.
+We handled this by creating two helper functions, checklin and checkPath.
+The checklin function determines what kind of line the piece intends to
+move in, and the checkPath function ensures that this line is clear of
+obstacle pieces on the board.
+  Another condition that had to be checked before a move could be made
+is that the move would not put the player making the move in check. Each time
+a player wants to make a move, we create a new Chess object assuming that the
+move was made, and we called the existing in_check function on our new Chess
+object. If the Chess object is found to be in check, then this move is not
+executed.
+
+In this program, we use dynamic memory allocation to store the Piece objects.
+All Piece objects are dynamically allocated, and the pointers to these objects
+are stored in the map in Board. In order to handle deallocation of the Piece
+objects and prevent memory leaks, we created a member function in Board called
+clearBoard that deletes all of the pieces on the board. We call clearBoard
+when a new game is loaded, so that all of the Piece objects used in the previous
+game are deallocated. We also call clearBoard in our destructor for Chess.
+We decided to deallocate these pieces in a member function rather than with a
+Board destructor so that we don't need to destroy the current board to load a
+new game.
+Pieces that are captured in the game and removed from the board before
+clearBoard is called are deallocated are deallocated when they are captured.
+
+
+COMPLETENESS
+
+To the best of our knowledge, our solution is fully complete.
